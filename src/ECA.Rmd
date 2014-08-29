@@ -24,19 +24,13 @@ Sample Histograms
 Do some basic plots to get a feel for the data. Start with histograms. Are they normally distributed?
 
 ```{r "Basic Histograms"}
-hist(ECA$Strontium, main="Histogram of Strontium")
-hist(ECA$Barium)
-hist(ECA$Magnesium)
-hist(ECA$Manganese)
-##Or could use ggplot
-##MnHist <- ggplot(ECA, aes(x=Manganese))
-##MnHist + geom_histogram(binwidth = 3)+labs(title = "Manganese")+ labs(y = "Ratio")+ theme(axis.text.x=element_text(angle=90))
-hist(ECA$Boron)
-hist(ECA$Iron)
-hist(ECA$Silicon)
-hist(ECA$Aluminium)
-hist(ECA$Sulphur)
-hist(ECA$Chlorine)
+for (x in 12:22){
+  hist(ECA[,x], main =paste("Histogram: Concentrations of ", colnames(ECA[x]), "in Murrumbidgee River Water - 2012"), xlab="Concentration (ug/g)")
+}
+
+#Or could use ggplot
+#MnHist <- ggplot(ECA, aes(x=Manganese))
+#MnHist + geom_histogram(binwidth = 3)+labs(title = "Manganese")+ labs(y = "Ratio")+ theme(axis.text.x=element_text(angle=90))
 ```
 
 Elements as they Vary Between Sites
