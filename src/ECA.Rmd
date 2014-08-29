@@ -13,6 +13,12 @@ load.project() #All projectTemplates need this up front
 options(width=200)
 opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
 ```
+A Summary of the Data Under Analysis
+------------------------------------
+```{r "Summarise Data for a look"}
+FeelForData() # Al's first function :-)
+```
+
 Sample Histograms
 -----------------
 Do some basic plots to get a feel for the data. Start with histograms. Are they normally distributed?
@@ -37,7 +43,7 @@ Elements as they Vary Between Sites
 -----------------------------------
 Elements as they vary with Location. The Murrumbidgee sites are the 6 on the left and in descending order. The remaining 4 on the right hand side of the graphs are the 4 tributaries. Gudgenby River, Tuggeranong Creek, Cotter River and the Molongolo River. These are also in descending order.    
 
-```{r "Plots of Main Five"}
+```{r "Plots of Main Ten"}
 plot(ECA$Location, ECA$Strontium, main="Strontium",las=2, ylab="Concentration (ug/g)")
 plot(ECA$Location, ECA$Barium, main="Barium", las=2, ylab="Concentration (ug/g)")
 plot(ECA$Location, ECA$Magnesium, main="Magnesium",las=2, ylab="Concentration (ug/g)")
@@ -49,6 +55,7 @@ plot(ECA$Location, ECA$Aluminium, main="Aluminium", las=2, ylab="Concentration (
 plot(ECA$Location, ECA$Sulphur, main="Sulphur",las=2, ylab="Concentration (ug/g)")
 plot(ECA$Location, ECA$Chlorine, main="Chlorine", las=2, ylab="Concentration (ug/g)")
 ```
+
 Ratios of the Big Four with Calcium as they Vary Between Sites
 --------------------------------------------------------------
 
@@ -116,6 +123,8 @@ plot(hcr, main="Ratios of same 4 elements with Ca", hang = -1)
 
 Table of Original Data
 ----------------------
+This is a table of data for reproducibility purposes. It can also be downloaded from www.figshare.com 
+
 ```{r "Print Original Data to Share"}
 ##Subset for Sharing
 ECAshare<-ECA[,7:26]
